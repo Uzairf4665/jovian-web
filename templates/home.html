@@ -4,52 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <title>Flask project</title>
   <style>
-    h1 {
-      font-size: 40px;
-      font-family: Roboto;
-      font-weight: normal;
+    #id{
+      height:360px;
+      width:100%;
+      object-fit:cover;
+    }
+    .text-center{
       text-align: center;
     }
-    #banner{
-      width:100%;
-      height:560px;
-      object-fit: cover;
-    }
-    h2{
-      font-family: Roboto;
-      font-size: 32px;
-      color: rgb(100,100,100);
-      text-align: center
-    }
-    p{
-      font-family: Roboto;
-      color: rgb(80,80,80);
-      font-size: 18px;
-    }
-    #container{
-      max-width:720px;
-      margin:0 auto 0 auto;
-    }
-    #btn{
-      text-align:center;
-      font-family: Roboto;
-      font-size: 20px;
-      
-    }
   </style>
+  
 </head>
 <body>
-  <div id='container'>
- <h1>Jovian Careers</h1>
-  <img id='banner' src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height=800 alt="">
-  <h2>About Jovian</h2>
+  <div class = 'container'>
+ <h1 class="text-center mp-2 mb-4"> {{company_name}} Careers</h1>
+  <img class = 'img-fluid' id='banner' src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height=800 alt="">
+  <h2 class='text-center mp-2 mb-4'>About Jovian</h2>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
-  <h2>Open Positions</h2>
-  <p>Todo- To show the jobs here</p>
-    <div id='btn'><button>Contact Us</button>
-      <p>copyrigths 2020, jovian</p>
+  <h2 class='text-center mp-2 mb-4'>Open Positions</h2>
+  
+    <div>
+      {% for job in Jobs %}
+      {% include 'jobsitem.html' %}
+       {% endfor %}
+    </div>
+    <div class = 'text-center'><button class ="btn btn-primary btn-lg">Contact Us</button>
+      <p class ='mt-4'>copyrigths 2020, jovian</p>
     </div>
   
     </div>
